@@ -1,6 +1,4 @@
-﻿using System.Net;
-
-namespace BrainDeviceCom
+﻿namespace BrainDeviceCom
 {
     public static class ComConst
     {
@@ -8,6 +6,7 @@ namespace BrainDeviceCom
         public const byte PackageEnd = 0XC0;
         public const int BufferSize = 1024;//in bytes
         public const int BufferCount = 2;
+        public const int TimeOutMilliSec = 100;//in milliseconds
     }
     
     public enum DeviceStatus
@@ -16,12 +15,14 @@ namespace BrainDeviceCom
         DevOnLine,
         DevSampling,
         DevError,
+        DevResponseTimeOut,
     }
 
     public enum DeviceErrorCode
     {
         OpSuccess,
         OpFailed,
+        OpTimeout,
     }
 
     public enum DeviceCommandCategory
@@ -30,16 +31,21 @@ namespace BrainDeviceCom
         SetParamCmd,
         QueryParamCmd,
     }
-    
-    public class DeviceConfig
-    {
-        public string Host;
-        public int Port;
-    }
 
-    public class DeviceParam
+    public struct SamplePackage
     {
         
+    }
+    
+    public struct DeviceParam
+    {
+        
+    }
+
+    public interface IDeviceConfig
+    {
+        string Host { get; }
+        int Port { get; }
     }
 
 }

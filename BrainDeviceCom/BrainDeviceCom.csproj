@@ -36,10 +36,12 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Reactive.Core" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BrainDeviceData.cs" />
+    <Compile Include="BrainDeviceServiceImpl.cs" />
     <Compile Include="IBrainDeviceService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
