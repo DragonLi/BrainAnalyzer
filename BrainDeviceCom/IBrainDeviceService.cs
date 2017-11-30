@@ -2,6 +2,12 @@
 
 namespace BrainDeviceCom
 {
+    /// <summary>
+    /// device service exposed using reactive extension,
+    /// warning: all callback are run in default thread scheduler,
+    /// client may be reschedule to run in UI thread.
+    /// client usage: connect, query device status,then start sampling
+    /// </summary>
     public interface IBrainDeviceService
     {
         /// <summary>
